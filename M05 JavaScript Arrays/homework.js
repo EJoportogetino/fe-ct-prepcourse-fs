@@ -26,7 +26,7 @@ function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
-   var masuno=array.map(sum => array+1);
+   var masuno=array.map(num =>{return num+1});
    return(masuno);
 }
 
@@ -60,13 +60,20 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
-   //var esta= array.
+   var esta= array.includes(elemento);
+   return(esta);
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+   var suma= 0;
+   for (var i=0;i<arrayOfNums.length;i++) 
+       {
+         suma = suma + arrayOfNums[i];
+       }
+   return(suma);
 }
 
 function promedioResultadosTest(resultadosTest) {
