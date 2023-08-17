@@ -126,7 +126,7 @@ function fizzBuzz(num) {
       return('fizz')
    }else if (num % 5 === 0) {
       return('buzz')
-   }else {return(false);}
+   }else {return(false);}  //posible manera de optimizar esto? ... (++++)
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -189,8 +189,8 @@ function esPrimo(num) {
         }
        return (true);
       } 
-   }
-      
+   }                                                        //(+++)
+
 }
 
 function esVerdadero(valor) {

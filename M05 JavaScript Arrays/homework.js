@@ -3,23 +3,19 @@
 function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
    // Tu código:
-   var elementoarray = array[0];
-   return (elementoarray);
+   return (array[0]); 
 }
 
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
-   var ultimo = array.length;
-   elemento= array[ultimo-1];
-   return (elemento);
+   return (array[array.length-1]);
 }
 
 function obtenerLargoDelArray(array) {
    // Retornar la longitud del arreglo recibido por parámetro.
    // Tu código:
-   ultimo= array.length;
-   return(ultimo);
+   return(array.length); // logre optimizar un poco estos primeros ejercicios (chekear anteriores logs), luego de entender el manejo de los arrays
 }
 
 function incrementarPorUno(array) {
@@ -109,7 +105,16 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
-
+   if (arguments.length ===0)
+     {
+      return(0);
+     } 
+   var resultado = 1;
+   for (var i =0; i< arguments.length; i++)
+    {
+      resultado = arguments[i] * resultado;
+    }
+    return (resultado); //no recuerdo en la teoria haber visto lo de arguments, al menos en el video
 }
 
 function cuentoElementos(array) {
@@ -141,12 +146,17 @@ function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
-   var arreglo_numero = num.split('');
-   if (arreglo_numero[0]===9)
+   var cadena_num = num.toString();
+   var arreglo_numero = cadena_num.split('');  //no recuerdo que dijera en el video teoria que solo funcionaba con strings, lo vi en una resolucion de slack
+
+   if (arreglo_numero[0]==="9")
      {
       return(true);
      }
-   else {return(false)};
+   else 
+    {
+      return(false);
+    };
 }
 
 function todosIguales(array) {
@@ -201,30 +211,37 @@ function mesesDelAño(array) {
     }
    else
    {
-      return ("No se encontraron los meses pedidos");
-   }
+      return ("No se encontraron los meses pedidos");  // se que debe haber modos mas practicos de hacer esto, teoricamente para resumir codigo lo primero es q la sentencia de if sea otro procedimiento
+   }                                                   // pero realmente no se me ocurre otra manera, personalmente me resulta mas "practico" pensarlo asi aunque se q no es lo mas optimo
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
-   for (i=0; i<10; i++)
-     {
-      tablaDelSeis.push[i*6];
+   var tabla=[];
+   for (i=0; i<11; i++)  
+     { 
+      tabla.push(i*6);
      }
- return (tablaDelSeis);
+ return (tabla);
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
-   //var i=0;var array_2=[];
-   //while (i<array.length)
-   //  {
-   //     if (array[i]=)
-   //  }
+   var i=0; var array_2=[];
+   while (i<array.length)
+     {
+        if (array[i]>100)
+          {
+            var a=array[i];
+            array_2.push(a);
+          }
+          i++;
+     }
+     return (array_2);
 }
 
 /* ----------------------------------------------------------------------------------
