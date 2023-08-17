@@ -80,12 +80,28 @@ function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
+   var suma=0;
+   for (var i=0; i<resultadosTest.length; i++)
+     {
+      suma = suma + resutladosTest[i];
+     }
+     var promedio= suma / resutladosTest.length;
+     return(promedio);
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
+   mayor =0;
+   for (var i=0;i<arrayOfNums.length;i++)
+     {
+       if (arrayofNums[i]>mayor)
+          {
+            mayor=arrayofNums[i];
+          }
+     }
+   return(mayor);
 }
 
 function multiplicarArgumentos() {
@@ -93,11 +109,21 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   var mayores_18 =0;
+   for (var i=0;i<array.length;i++)
+    {
+      if (array[i]>18)
+         {
+            mayores_18 = mayores_18 + 1;
+         }
+    }
+    return (mayores_18);
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -105,18 +131,45 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+   if (numeroDeDia === 1 || numeroDeDia === 7)
+     {return("Es fin de semana")}
+   else
+     {return("Es dia laboral")}
 }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+   var arreglo_numero = num.split('');
+   if (arreglo_numero[0]=9)
+     {
+      return(true);
+     }
+   else {return(false)};
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   var iguales=false;
+   var control_1 = 0; var control_2=0 
+   while (array.length != control_1 && iguales= false)
+     {
+      var sig=control_1 +1;
+        while(sig!=array.length o iguales= false)
+          {
+            if (array[control_2]=array[sig])
+              {
+               iguales=true;
+              }
+            else
+              {
+               sig= sig +1;
+              }
+          }
+     }
 }
 
 function mesesDelAño(array) {
