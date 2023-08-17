@@ -81,11 +81,11 @@ function promedioResultadosTest(resultadosTest) {
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
    var suma=0;
-   for (var i=0; i<resultadosTest.length; i++)
+   for (var i=0; i< resultadosTest.length; i++)
      {
-      suma = suma + resutladosTest[i];
+      suma = suma + resultadosTest[i];
      }
-     var promedio= suma / resutladosTest.length;
+     var promedio= suma / resultadosTest.length;
      return(promedio);
 }
 
@@ -96,9 +96,9 @@ function numeroMasGrande(arrayOfNums) {
    mayor =0;
    for (var i=0;i<arrayOfNums.length;i++)
      {
-       if (arrayofNums[i]>mayor)
+       if (arrayOfNums[i]>mayor)
           {
-            mayor=arrayofNums[i];
+            mayor=arrayOfNums[i];
           }
      }
    return(mayor);
@@ -142,7 +142,7 @@ function empiezaConNueve(num) {
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
    var arreglo_numero = num.split('');
-   if (arreglo_numero[0]=9)
+   if (arreglo_numero[0]===9)
      {
       return(true);
      }
@@ -153,23 +153,15 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
-   var iguales=false;
-   var control_1 = 0; var control_2=0 
-   while (array.length != control_1 && iguales= false)
-     {
-      var sig=control_1 +1;
-        while(sig!=array.length o iguales= false)
-          {
-            if (array[control_2]=array[sig])
-              {
-               iguales=true;
-              }
-            else
-              {
-               sig= sig +1;
-              }
-          }
-     }
+   var i = 0;
+   if (array[i]===array[1])
+    {
+     return (true);
+    }
+  else 
+    {
+      return(false);
+    }
 }
 
 function mesesDelAño(array) {
@@ -177,18 +169,62 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var i= 0;var iguale_e=false;var iguale_m=false;var iguale_n=false;var a=0; var arreglo=[];
+   while (i < array.length )
+     {
+      if (array[i]=== "Enero" || array[i]=== "Marzo" || array[i]=== "Noviembre")
+       {
+         if (array[i]=== "Enero")
+          {
+            arreglo[a] = array[i];
+            a ++;
+            iguale_e=true;  
+          } 
+          else if (array[i]=== "Marzo")
+          {
+            arreglo[a] = array[i];
+            a ++;
+            iguale_m=true;  
+          }
+          else if (array[i]=== "Noviembre")
+          {
+            arreglo[a] = array[i];
+            a ++;
+            iguale_n=true;  
+          }
+       }
+      i++;
+     }
+   if (iguale_e===true && iguale_m===true && iguale_n===true )
+    {
+     return(arreglo);
+    }
+   else
+   {
+      return ("No se encontraron los meses pedidos");
+   }
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   for (i=0; i<10; i++)
+     {
+      tablaDelSeis.push[i*6];
+     }
+ return (tablaDelSeis);
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   //var i=0;var array_2=[];
+   //while (i<array.length)
+   //  {
+   //     if (array[i]=)
+   //  }
 }
 
 /* ----------------------------------------------------------------------------------
