@@ -255,6 +255,21 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var control=0;var cont=0; var romper= false; var arr=[];
+   while (control<10)
+    {  
+      arr.push(num); num= num+2; cont= cont +1;
+      if (num=cont)
+        {
+         return("Se interrumpió la ejecución");romper = true;
+         break;                                                          //no entendi la consigna, esto es lo que interprete que habia que hacer.
+        }                                                                // Clramente no es asi, se que estoy fallando en algo porque este break
+      else if(romper=false)                                              //no tiene sentido y mas lo que voy a hacer despues
+        {                                                            
+           return(arr);
+        }                                          
+                                    
+    }
 }
 
 function continueStatement(num) {
