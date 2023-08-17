@@ -23,7 +23,7 @@ function incrementarPorUno(array) {
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
    var masuno=array.map(num =>{return num+1});
-   return(masuno);
+   return(masuno);                                                                    //probar hacer por interación
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -284,14 +284,14 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
-   var cont=0; var arr=[];
-   while (cont<8)
+   var cont=0;
+   var arr=[];
+   while (cont<10)
     {  
+      if (cont === 5) {cont ++; continue; }; 
       num= num+2;
-      cont= cont +1;
-      if (cont = 5)
-        {continue;}
-      else if (cont!=5) {num.push(num);}                                                         
+      arr.push(num);
+      cont++;                                                     
     }                                                                                                        
    return(arr);
 }
