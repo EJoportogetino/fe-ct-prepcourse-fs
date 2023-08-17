@@ -258,18 +258,23 @@ function breakStatement(num) {
    var control=0;var cont=0; var romper= false; var arr=[];
    while (control<10)
     {  
-      arr.push(num); num= num+2; cont= cont +1;
-      if (num=cont)
+      num= num+2;
+      arr.push(num);
+      cont= cont +1;
+      if (num===cont)
         {
-         return("Se interrumpió la ejecución");romper = true;
-         break;                                                          //no entendi la consigna, esto es lo que interprete que habia que hacer.
-        }                                                                // Clramente no es asi, se que estoy fallando en algo porque este break
-      else if(romper=false)                                              //no tiene sentido y mas lo que voy a hacer despues
-        {                                                            
-           return(arr);
-        }                                          
-                                    
-    }
+         romper = true;
+         break;                                                        
+        }                                                               
+      control ++;
+    }                                          
+   if (romper ===true)
+     {return ("Se interrumpió la ejecución");}
+   else if(romper===false)                                              
+     {                                                            
+        return(arr);                                                              
+     }
+     
 }
 
 function continueStatement(num) {
@@ -279,6 +284,16 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var cont=0; var arr=[];
+   while (cont<8)
+    {  
+      num= num+2;
+      cont= cont +1;
+      if (cont = 5)
+        {continue;}
+      else if (cont!=5) {num.push(num);}                                                         
+    }                                                                                                        
+   return(arr);
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
