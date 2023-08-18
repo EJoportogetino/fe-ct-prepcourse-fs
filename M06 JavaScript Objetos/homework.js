@@ -7,7 +7,11 @@ function crearGato(nombre, edad) {
    // La propiedad "meow" será una función que retorne el string: "Meow!".
    // Retornar el objeto.
    // Tu código:
-   var gato = {nombre: nombre ,edad: edad, meow: 'Meow!'};
+   //function meow()
+   //{return ('Meow!')}                                                                  
+   //var gato = {nombre: nombre ,edad: edad, funcion (meow)};
+   //return (gato);                                                                   no entiendo el error 
+   var gato = {nombre: nombre ,edad: edad , meow: 'Meow!'};
    return (gato);
 }
 
