@@ -11,7 +11,8 @@ function crearGato(nombre, edad) {
    //{return ('Meow!')}                                                                  
    //var gato = {nombre: nombre ,edad: edad, funcion (meow)};
    //return (gato);                                                                   no entiendo el error 
-   var gato = {nombre: nombre ,edad: edad , meow: 'Meow!'};
+   var gato = {nombre: nombre ,edad: edad};
+   gato.meow= "Meow!";
    return (gato);
 }
 
@@ -20,6 +21,8 @@ function nuevoUsuario(nombre, email, password) {
    // Este debe tener las propiedades: "nombre", "email" y "password" con sus respectivos valores.
    // Retornar el objeto.
    // Tu código:
+   Usuario={nombre: nombre,email: email,password: password};
+   return(Usuario);
 }
 
 function agregarPropiedad(objeto, propiedad) {
@@ -28,6 +31,9 @@ function agregarPropiedad(objeto, propiedad) {
    // Esta propiedad será igual al valor `null`.
    // Retornar el objeto.
    // Tu código:
+   var a= null;
+   objeto.propiedad = a;
+   return (objeto);
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -35,36 +41,61 @@ function invocarMetodo(objeto, metodo) {
    // Esta propiedad contiene una función en su interior. Debes invocarla/ejecutarla.
    // [NOTA]: no necesitar retornar nada.
    // Tu código:
+   objeto[metodo()];                                                          //dot notation tampoco funciona
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
    // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
    // Debes multiplicar este número por 5 y retornar el resultado.
    // Tu código:
+
 }
 
 function eliminarPropiedad(objeto, propiedad) {
    // El parámetro "propiedad" es una propiedad del objeto que recibes.
    // Debes eliminarla del objeto y retornarlo finalmente.
    // Tu código:
+   delate(objeto.propiedad);
+   return (objeto);
 }
 
 function tieneEmail(objetoUsuario) {
    // Verifica si el "objetoUsuario", en su propiedad "email", posee un valor definido.
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
+   var tienepropiedad= objetoUsuario.hasOwnProperty('email');
+   if ( tienepropiedad === true && objetoUsuario.email != null)
+    {
+      return(true);
+    }
+   else
+    {
+     return(false);
+    };
 }
 
 function tienePropiedad(objeto, propiedad) {
    // Verifica si el objeto recibido posee una propiedad con el mismo nombre que el parámetro "propiedad".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
+   var tienepropiedad= objeto.hasOwnProperty(propiedad); // por que en la teoria esta funcion llama a la propiedad con ('') y aca no funciona? si ambas son nombres de propiedades
+   if (tienepropiedad === true)
+    {
+      return(true);
+    }
+   else
+    {
+     return(false);
+    };
 }
 
 function verificarPassword(objetoUsuario, password) {
    // Verifica si la propiedad "password" del "objetoUsuario" coincide con el parámetro "password".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
+   if (objetoUsuario[password] === password)
+     {return(true)}
+   else {return(false)}
 }
 
 function actualizarPassword(objetoUsuario, nuevaPassword) {
@@ -72,6 +103,8 @@ function actualizarPassword(objetoUsuario, nuevaPassword) {
    // La nueva contraseña la recibes por parámetro.
    // Retornar el objeto.
    // Tu código:
+   objetoUsuario.password = nuevaPassword;
+   return (objetoUsuario)
 }
 
 function agregarAmigo(objetoUsuario, nuevoAmigo) {
@@ -79,6 +112,8 @@ function agregarAmigo(objetoUsuario, nuevoAmigo) {
    // Debes agregar el "nuevoAmigo" al final de este arreglo.
    // Retornar el objeto.
    // Tu código:
+   objetoUsuario[amigos].push(nuevoAmigo);
+   return(objetoUsuario);                                                       //primera prueba, creo q voy a probar con for in
 }
 
 function pasarUsuarioAPremium(objetoMuchosUsuarios) {
@@ -87,6 +122,11 @@ function pasarUsuarioAPremium(objetoMuchosUsuarios) {
    // Define esta propiedad de todos los usuarios como true.
    // Retornar el arreglo.
    // Tu código:
+   for (var prop in objetoMuchosUsuarios)
+    {
+      prop[esPremium]=true;
+    }
+    return (objetoMuchosUsuarios);
 }
 
 function sumarLikesDeUsuario(objetoUsuario) {
@@ -95,6 +135,7 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
+
 }
 
 function agregarMetodoCalculoDescuento(objetoProducto) {
