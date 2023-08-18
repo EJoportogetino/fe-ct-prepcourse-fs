@@ -288,9 +288,9 @@ function continueStatement(num) {
    var arr=[];
    while (cont<10)
     {  
-      if (cont === 5) {cont ++; continue; }; 
-      num= num+2;
-      arr.push(num);
+      if (cont === 5) {cont ++; continue; };        //nota personal: si tengo un if dentro de un while... en todas las condiciones sumarle al contador que tengo para cortar 
+      num= num+2;                                   // porque si entra a una condicion que no suma el contador "de corte" tenes el problema de entrar en un loop infinito 
+      arr.push(num);                                //y pasas 3 horas pensando por que 
       cont++;                                                     
     }                                                                                                        
    return(arr);

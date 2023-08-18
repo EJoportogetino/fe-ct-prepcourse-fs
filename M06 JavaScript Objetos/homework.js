@@ -10,9 +10,8 @@ function crearGato(nombre, edad) {
    //function meow()
    //{return ('Meow!')}                                                                  
    //var gato = {nombre: nombre ,edad: edad, funcion (meow)};
-   //return (gato);                                                                   no entiendo el error 
-   var gato = {nombre: nombre ,edad: edad};
-   gato.meow= "Meow!";
+   //return (gato);                                                                   no entiendo el error // el error era no entender que una propiedad puede ser una funcion
+   var gato = {nombre: nombre , edad:edad, meow: function() {return ("Meow!")}};
    return (gato);
 }
 
@@ -31,9 +30,10 @@ function agregarPropiedad(objeto, propiedad) {
    // Esta propiedad será igual al valor `null`.
    // Retornar el objeto.
    // Tu código:
-   var a= null;
-   objeto.propiedad = a;
-   return (objeto);
+   //var a= null;
+   //objeto.propiedad = a;
+   //return (objeto);
+
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -48,7 +48,10 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
    // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
    // Debes multiplicar este número por 5 y retornar el resultado.
    // Tu código:
-
+   var a= objetoMisterioso[numeroMisterioso];
+   a = a *5;
+   objetoMisterioso[numeroMisterioso] = a;
+   return(objetoMisterioso);
 }
 
 function eliminarPropiedad(objeto, propiedad) {
@@ -135,7 +138,13 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
-
+  var suma= 0;var posteos = objetoUsuario.posts;
+  for (i=0; i<posteos.length; i++)
+    {
+      a= posteos.likes;
+      suma= suma+a;
+    } 
+   return (suma);
 }
 
 function agregarMetodoCalculoDescuento(objetoProducto) {
@@ -149,6 +158,7 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    // PorcentajeDeDescuento ---> 0.2
    // Precio final ---> 8
    // Tu código:
+   objetoProducto.calcularPrecioDescuento 
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
