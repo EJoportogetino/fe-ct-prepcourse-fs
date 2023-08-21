@@ -134,12 +134,17 @@ function pasarUsuarioAPremium(objetoMuchosUsuarios) {
    // {
    //   user[esPremium]=true;
    // }
-   // return (objetoMuchosUsuarios);                                       // creo q este error es por tomar a "objetomuchosusuarios" como objeto cuando es un arreglo... 
-   for (var i=0; i<objetoMuchosUsuarios.length; i++)
-     {
-      objetoMuchosUsuarios[i].esPremium = true;
-     }
-  return(objetoMuchosUsuarios);                                                 
+   // return (objetoMuchosUsuarios);                                       creo q este error es por tomar a "objetomuchosusuarios" como objeto cuando es un arreglo... 
+   //for (var i=0; i<objetoMuchosUsuarios.length; i++)
+   //  {
+   //   i[esPremium] = true;                                                ojo aca!
+   //  }
+  //return(objetoMuchosUsuarios); 
+  for (var i=0; i<objetoMuchosUsuarios.length; i++)
+  {
+   objetoMuchosUsuarios[i].esPremium = true;
+  }
+return(objetoMuchosUsuarios);                
 }
 
 function sumarLikesDeUsuario(objetoUsuario) {
@@ -148,12 +153,24 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
-  var suma= 0;var posteos = objetoUsuario.posts;
-  for (i=0; i<posteos.length; i++)
+   //var suma= 0;var posteos = objetoUsuario.posts;
+   //for (i=0; i<posteos.length; i++)
+   // {
+   //   a= posteos.likes;
+   //   suma= suma+a;
+   // } 
+   //return (suma);                                                                        //al reves del anterior? tratando un objeto como arreglo?
+  // var publi=objetoUsuario.posts; suma = 0;
+  // for (var i= 0; i<publi.length; i++)
+  //   {
+  //    suma=i.likes + suma;
+  //   }
+  // return(suma);                                                                         // luego de consultar en slack me aconsejaron usar for..of
+  var suma =0;
+  for (var i of objetoUsuario.posts) 
     {
-      a= posteos.likes;
-      suma= suma+a;
-    } 
+       suma= i.likes + suma;
+    }
    return (suma);
 }
 
