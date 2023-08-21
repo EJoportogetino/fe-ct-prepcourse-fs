@@ -185,7 +185,44 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    // PorcentajeDeDescuento ---> 0.2
    // Precio final ---> 8
    // Tu código:
-   //objetoProducto.calcularPrecioDescuento: function() {objetoProducto.producto * objetoProducto.porcentajeDeDescuento} //esto esta mal pero para tener una idea mas o menos de lo q tengo q hacer
+   
+   //  objetoProducto.calcularPrecioDescuento = function() 
+   //  {
+   //    var precio= objetoProducto.precio * objetoProducto.porcentajeDeDescuento;
+   //    return(precio); 
+   //  }                                                                           // forma uno
+   //  objetoProducto= { calcularPrecioDescuento: () => 
+   //     {
+   //       var precio= objetoProducto.precio * objetoProducto.porcentajeDeDescuento;
+   //       return(precio); 
+   //     }                                                                        // forma dos
+
+   //  objetoProducto= { calcularPrecioDescuento: (objetoProducto[precio], objetoProducto[porcentajeDeDescuento]) => 
+   //      {
+   //         var costo= objetoProducto[precio] * objetoProducto[porcentajeDeDescuento];
+   //         return(costo); 
+   //      }                                                                        //forma tres
+
+   //     var costo= objetoProducto.precio;
+   //     var descuento= objetoProducto.porcentajeDeDescuento;
+   //     objetoProducto.calcularPrecioDescuento = function(costo, descuento)
+   //       {
+   //         var pre=costo*descuento;
+   //         return(pre);
+   //       }                                                                       // forma cuatro, definiendo la funcion por separado?
+   //       function calcularPrecioDescuento(objetoProducto) 
+   //        {
+   //           return (objetoProducto[porcentajeDeDescuento]*objetoProducto[precio]);
+   //        }
+   //        return objetoProducto.calcularPrecioDescuento()
+ 
+  // objetoProducto.calcularPrecioDescuento = function() {
+  //    var descuento = objetoProducto.precio * objetoProducto.porcentajeDeDescuento;
+  //    var precioFinal = objetoProducto.precio - descuento;
+  //    return precioFinal;                                                         no pude resolverlo 
+  //}
+  
+  //return objetoProducto.calcularPrecioDescuento();
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
