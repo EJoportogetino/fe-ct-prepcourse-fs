@@ -30,10 +30,8 @@ function agregarPropiedad(objeto, propiedad) {
    // Esta propiedad será igual al valor `null`.
    // Retornar el objeto.
    // Tu código:
-   //var a= null;
-   //objeto.propiedad = a;
-   //return (objeto);
-
+  objeto[propiedad] =null;
+  return(objeto);
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -41,25 +39,27 @@ function invocarMetodo(objeto, metodo) {
    // Esta propiedad contiene una función en su interior. Debes invocarla/ejecutarla.
    // [NOTA]: no necesitar retornar nada.
    // Tu código:
-   objeto[metodo()];                                                          //dot notation tampoco funciona
+   //objeto[metodo()];                                                          dot notation tampoco funciona
+   objeto[metodo]();                                                          //tan cerca y tan lejos
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
    // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
    // Debes multiplicar este número por 5 y retornar el resultado.
    // Tu código:
-   var a= objetoMisterioso[numeroMisterioso];
-   a = a *5;
-   objetoMisterioso[numeroMisterioso] = a;
-   return(objetoMisterioso);
+   //var a= objetoMisterioso[numeroMisterioso];
+   //a = a *5;
+   //objetoMisterioso[numeroMisterioso] = a;
+   //return(objetoMisterioso);
+   return (objetoMisterioso.numeroMisterioso*5);                              //no entiendo como fue q funciono, pero lo hizo 
 }
 
 function eliminarPropiedad(objeto, propiedad) {
    // El parámetro "propiedad" es una propiedad del objeto que recibes.
    // Debes eliminarla del objeto y retornarlo finalmente.
    // Tu código:
-   delate(objeto.propiedad);
-   return (objeto);
+   delete objeto[propiedad];
+   return (objeto);                                                   //no funciona con dot notation
 }
 
 function tieneEmail(objetoUsuario) {
@@ -96,7 +96,9 @@ function verificarPassword(objetoUsuario, password) {
    // Verifica si la propiedad "password" del "objetoUsuario" coincide con el parámetro "password".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   if (objetoUsuario[password] === password)
+   var contraseña = objetoUsuario.password;                     // ahora lo q no anduvo fue bracket notation .... ¯\_(ツ)_/¯
+
+   if (contraseña === password)
      {return(true)}
    else {return(false)}
 }
@@ -115,8 +117,11 @@ function agregarAmigo(objetoUsuario, nuevoAmigo) {
    // Debes agregar el "nuevoAmigo" al final de este arreglo.
    // Retornar el objeto.
    // Tu código:
-   objetoUsuario[amigos].push(nuevoAmigo);
-   return(objetoUsuario);                                                       //primera prueba, creo q voy a probar con for in
+   //objetoUsuario[amigos].push(nuevoAmigo);
+   //return(objetoUsuario);                                                       primera prueba, creo q voy a probar con for in
+  objetoUsuario.amigos.push(nuevoAmigo);                                         //... cada ves mas confundido de porque a veces funciona bracket y a veces dot
+  return(objetoUsuario);
+
 }
 
 function pasarUsuarioAPremium(objetoMuchosUsuarios) {
@@ -125,11 +130,16 @@ function pasarUsuarioAPremium(objetoMuchosUsuarios) {
    // Define esta propiedad de todos los usuarios como true.
    // Retornar el arreglo.
    // Tu código:
-   for (var prop in objetoMuchosUsuarios)
-    {
-      prop[esPremium]=true;
-    }
-    return (objetoMuchosUsuarios);
+   //for (var user in objetoMuchosUsuarios)
+   // {
+   //   user[esPremium]=true;
+   // }
+   // return (objetoMuchosUsuarios);                                       // creo q este error es por tomar a "objetomuchosusuarios" como objeto cuando es un arreglo... 
+   for (var i=0; i<objetoMuchosUsuarios.length; i++)
+     {
+      objetoMuchosUsuarios[i].esPremium = true;
+     }
+  return(objetoMuchosUsuarios);                                                 
 }
 
 function sumarLikesDeUsuario(objetoUsuario) {
@@ -158,7 +168,7 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    // PorcentajeDeDescuento ---> 0.2
    // Precio final ---> 8
    // Tu código:
-   objetoProducto.calcularPrecioDescuento 
+   //objetoProducto.calcularPrecioDescuento: function() {objetoProducto.producto * objetoProducto.porcentajeDeDescuento} //esto esta mal pero para tener una idea mas o menos de lo q tengo q hacer
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
