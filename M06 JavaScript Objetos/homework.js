@@ -12,7 +12,8 @@ function crearGato(nombre, edad) {
    //var gato = {nombre: nombre ,edad: edad, funcion (meow)};
    //return (gato);                                                                   no entiendo el error // el error era no entender que una propiedad puede ser una funcion
    var gato = {nombre: nombre , edad:edad, meow: function() {return ("Meow!")}};
-   return (gato);
+   return (gato);                                                                      
+
 }
 
 function nuevoUsuario(nombre, email, password) {
@@ -58,7 +59,7 @@ function eliminarPropiedad(objeto, propiedad) {
    // El parámetro "propiedad" es una propiedad del objeto que recibes.
    // Debes eliminarla del objeto y retornarlo finalmente.
    // Tu código:
-   delete objeto[propiedad];
+   delete(objeto[propiedad]);
    return (objeto);                                                   //no funciona con dot notation
 }
 
@@ -81,8 +82,8 @@ function tienePropiedad(objeto, propiedad) {
    // Verifica si el objeto recibido posee una propiedad con el mismo nombre que el parámetro "propiedad".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   //var tienepropiedad= objeto.hasOwnProperty(propiedad); // por que en la teoria esta funcion llama a la propiedad con ('') y aca no funciona? si ambas son nombres de propiedades
-   if (objeto.hasOwnProperty(propiedad) === true)
+   var tienepropiedad= objeto.hasOwnProperty(propiedad); // por que en la teoria esta funcion llama a la propiedad con ('') y aca no funciona? si ambas son nombres de propiedades
+   if (tienepropiedad === true)
     {
       return(true);
     }
@@ -96,11 +97,10 @@ function verificarPassword(objetoUsuario, password) {
    // Verifica si la propiedad "password" del "objetoUsuario" coincide con el parámetro "password".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   //var contraseña = objetoUsuario.password;                     // ahora lo q no anduvo fue bracket notation .... ¯\_(ツ)_/¯
-
-   if (objetoUsuario.password === password)
-     {return(true)}
-   else {return(false)}
+   var contraseña = objetoUsuario.password;                     // ahora lo q no anduvo fue bracket notation .... ¯\_(ツ)_/¯ 
+   if (contraseña === password)                                 // explicacion : dot notetion funciona cuando lo que estoy 
+     {return(true)}                                            //usando es el nombre literal, cuando hacemos referencia a 
+   else {return(false)}                                        //un nombre (el valor de la variable que esta de referecia en la funcion), se usa []
 }
 
 function actualizarPassword(objetoUsuario, nuevaPassword) {
@@ -117,7 +117,7 @@ function agregarAmigo(objetoUsuario, nuevoAmigo) {
    // Debes agregar el "nuevoAmigo" al final de este arreglo.
    // Retornar el objeto.
    // Tu código:
-   //objetoUsuario[amigos].push(nuevoAmigo);
+   //objetoUsuario[amigos].push(nuevoAmigo);.... para q funcione "" en los cochetes
    //return(objetoUsuario);                                                       primera prueba, creo q voy a probar con for in
   objetoUsuario.amigos.push(nuevoAmigo);                                         //... cada ves mas confundido de porque a veces funciona bracket y a veces dot
   return(objetoUsuario);
@@ -215,14 +215,20 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    //           return (objetoProducto[porcentajeDeDescuento]*objetoProducto[precio]);
    //        }
    //        return objetoProducto.calcularPrecioDescuento()                        //forma cinco
- 
-  // objetoProducto.calcularPrecioDescuento = function() {
-  //    var descuento = objetoProducto.precio * objetoProducto.porcentajeDeDescuento;
-  //    var precioFinal = objetoProducto.precio - descuento;
-  //    return precioFinal;                                                         
-  //}                                             
-   
-  //return objetoProducto.calcularPrecioDescuento();                                      no pude resolverlo 
+   // objetoProducto.calcularPrecioDescuento = function() {
+   //    var descuento = objetoProducto.precio * objetoProducto.porcentajeDeDescuento;
+   //    var precioFinal = objetoProducto.precio - descuento;
+   //    return precioFinal;                                                         
+   //}                                       
+   //return objetoProducto.calcularPrecioDescuento();                                      no pude resolverlo
+    var preciofinal=0;
+   objetoProducto.calcularPrecioDescuento = function()
+      {
+         var descuento=objetoProducto.precio * objetoProducto.porcentejeDeDescuento;
+         var preciofinal= objetoProducto.precio - descuento;
+         return preciofinal;
+      }
+      return objetoProducto;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
