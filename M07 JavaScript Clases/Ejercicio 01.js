@@ -2,7 +2,7 @@
 /*1️⃣ EJERCICIO 01 1️⃣*/
 
 function crearUsuario() {
-   // Crea una Clase de ES6 o una función constructora llamada "Usuario".
+   // Crea una Clase de ES6 o una función constructora llamada "Usuario".                  why no both?
    // El constructor de esta clase debe tener las propiedades: "usuario", "nombre", "email" y "password".
    // El valor de cada propiedad la recibirá por parámetro.
    // Además, esta clase debe tener un método llamado "saludar".
@@ -10,18 +10,66 @@ function crearUsuario() {
    // El valor {{nombre}} debe ser el nombre definido para la instancia de la clase.
    // Retornar la clase.
    // Tu código:
+   // function Usuario(usuario,nombre,email,password)
+   //   {
+   //      this.usuario=usuario;
+   //      this.nombre= nombre;
+   //      this.email=email;
+   //      this.password= password;
+
+        // this.info = funcion() 
+          // {
+           // var saludar=('Hola, mi nombre es '+ this.nombre);
+           //}
+  //    }
+  // var user=Usuario();
+  // return (user);                                                error de "usuario is not a constractor" algo de como lo retorno?                                        
+  
+  class Usuario
+    {
+      constructor(usuario, nombre, email, password)
+      {
+         this.usuario=usuario;
+         this.nombre=nombre;
+         this.email=email;
+         this.password=password;
+      }
+      saludar() 
+      {
+         return("Hola, mi nombre es "+ this.nombre);           
+      }
+    }
+    return(Usuario);           
+
 }
 
 function agregarMetodoPrototype(Usuario) {
    // Agrega un método al prototipo de "Usuario".
    // El método debe llamarse "saludar" y debe devolver el string "Hello World!".
    // Tu código:
+  Usuario.prototype.saludar= function()
+    {
+      return("Hello World!");
+    }
+   
+
+
 }
 
 function agregarStringInvertida() {
    // Agrega un método al prototipo de "String" que devuelva la misma cadena de caracteres, pero invertida.
    // El método debe llamarse "reverse".
    // [PISTA]: necesitarás utilizar el objeto "this".
+   agregarStringInvertida.prototype.reverse = function()
+     {
+      var inversa=[];
+      for (var i = this.length; i>0; i--)
+        {
+         inversa= this[i].push;
+        }
+      return(inversa);
+     }
+
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
