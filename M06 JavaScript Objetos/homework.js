@@ -47,11 +47,11 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
    // El parámetro "objetoMisterioso" posee una propiedad con el nombre "numeroMisterioso".
    // Debes multiplicar este número por 5 y retornar el resultado.
    // Tu código:
-   //var a= objetoMisterioso[numeroMisterioso];
-   //a = a *5;
-   //objetoMisterioso[numeroMisterioso] = a;
-   //return(objetoMisterioso);
-   return (objetoMisterioso.numeroMisterioso*5);                              //no entiendo como fue q funciono, pero lo hizo 
+   var a= objetoMisterioso.numeroMisterioso;
+   a = a *5;
+   objetoMisterioso.numeroMisterioso = a;                                     
+   return(a);                                                                   //antes no andaba porque habia puesto que retornara objeto misterioso cuando tenia q retornar el resu
+   //return (objetoMisterioso.numeroMisterioso*5);                              //no entiendo como fue q funciono, pero lo hizo 
 }
 
 function eliminarPropiedad(objeto, propiedad) {
@@ -81,8 +81,8 @@ function tienePropiedad(objeto, propiedad) {
    // Verifica si el objeto recibido posee una propiedad con el mismo nombre que el parámetro "propiedad".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   var tienepropiedad= objeto.hasOwnProperty(propiedad); // por que en la teoria esta funcion llama a la propiedad con ('') y aca no funciona? si ambas son nombres de propiedades
-   if (tienepropiedad === true)
+   //var tienepropiedad= objeto.hasOwnProperty(propiedad); // por que en la teoria esta funcion llama a la propiedad con ('') y aca no funciona? si ambas son nombres de propiedades
+   if (objeto.hasOwnProperty(propiedad) === true)
     {
       return(true);
     }
@@ -96,9 +96,9 @@ function verificarPassword(objetoUsuario, password) {
    // Verifica si la propiedad "password" del "objetoUsuario" coincide con el parámetro "password".
    // En ese caso retornar true. Caso contrario, false.
    // Tu código:
-   var contraseña = objetoUsuario.password;                     // ahora lo q no anduvo fue bracket notation .... ¯\_(ツ)_/¯
+   //var contraseña = objetoUsuario.password;                     // ahora lo q no anduvo fue bracket notation .... ¯\_(ツ)_/¯
 
-   if (contraseña === password)
+   if (objetoUsuario.password === password)
      {return(true)}
    else {return(false)}
 }
@@ -214,15 +214,15 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    //        {
    //           return (objetoProducto[porcentajeDeDescuento]*objetoProducto[precio]);
    //        }
-   //        return objetoProducto.calcularPrecioDescuento()
+   //        return objetoProducto.calcularPrecioDescuento()                        //forma cinco
  
   // objetoProducto.calcularPrecioDescuento = function() {
   //    var descuento = objetoProducto.precio * objetoProducto.porcentajeDeDescuento;
   //    var precioFinal = objetoProducto.precio - descuento;
-  //    return precioFinal;                                                         no pude resolverlo 
-  //}
-  
-  //return objetoProducto.calcularPrecioDescuento();
+  //    return precioFinal;                                                         
+  //}                                             
+   
+  //return objetoProducto.calcularPrecioDescuento();                                      no pude resolverlo 
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
