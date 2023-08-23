@@ -5,7 +5,15 @@ function mayuscula(nombre) {
    // Debe devolver el mismo nombre, pero con la primera letra en mayúscula.
    // [Ejemplo]: "mario" ----> "Mario".
    // Tu código:
-   
+   function agrandar(nombre)
+    {
+      var l=nombre.split('');
+      var arreglado=l[0].toUpperCase();
+      l.shift();
+      l.unshift(arreglado);
+      return(l.join(''))
+    }
+   return(agrandar(nombre));
 }
 
 function invocarCallback(cb) {
@@ -53,12 +61,36 @@ function map(array, cb) {
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
+   var arreglo= [];
+   for (var i = 0; i<array.length; i++)
+   {
+    arreglo.push(cb(array[i]));
+   }
+  return(arreglo);
 }
 
 function filter(arrayOfStrings) {
    // Debes identificar todos los elementos el arreglo que comiencen con la letra "a".
    // Luego retorna un nuevo arreglo con estos elementos.
    // Tu código:
+   function dividir(palabra)
+     {
+      return(palabra.split(''));
+     };
+   function es(letra)
+    {
+      if(letra==='a')
+       {return(true)}
+      else return(false)
+    } 
+    var arreglo_nuevo= [];
+    for (var i=0; i<arrayOfStrings.length; i++)
+      {
+         var l= dividir(arrayOfStrings[i]);
+         if(es(l[0]))
+           {arreglo_nuevo.push(arrayOfStrings[i])}
+      }
+   return(arreglo_nuevo);
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
