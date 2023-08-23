@@ -221,10 +221,9 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    //    return precioFinal;                                                         
    //}                                       
    //return objetoProducto.calcularPrecioDescuento();                                      no pude resolverlo
-    var preciofinal=0;
    objetoProducto.calcularPrecioDescuento = function()
       {
-         var descuento=objetoProducto.precio * objetoProducto.porcentejeDeDescuento;
+         var descuento=objetoProducto.precio * objetoProducto.porcentajeDeDescuento;
          var preciofinal= objetoProducto.precio - descuento;
          return preciofinal;
       }
