@@ -67,6 +67,7 @@ function map(array, cb) {
     arreglo.push(cb(array[i]));
    }
   return(arreglo);
+  
 }
 
 function filter(arrayOfStrings) {
