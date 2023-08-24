@@ -45,14 +45,16 @@ function numberOfCharacters(string) {
    //     }
    // return(letras);
       var letras = {};
-   
-      for (var i = 0; i < string.length; i++) {
-         var letra = string[i].toLowerCase(); // Convertir la letra a minúscula
-   
-         if (letra.match(/[a-z]/)) { // Verificar si es una letra
-            if (letras[letra]) {
+      for (var i = 0; i < string.length; i++) 
+      {
+         var letra = string[i].toLowerCase(); 
+         if (letra.match(/[a-z]/)) 
+         { 
+            if (letras[letra]) 
+            {
                letras[letra]++;
-            } else {
+            } else 
+            {
                letras[letra] = 1;
             }
          }
@@ -103,6 +105,13 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+   var palabra = frase.split(' ');
+   for (var i=0; i<palabra.length; i++)
+    {
+      palabra[i]=palabra[i].split("").reverse().join("");
+    }
+    const resultado= palabra.join(" ");
+    return resultado;
 }
 
 function capicua(numero) {
@@ -152,6 +161,7 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
+   return arrayOfStrings.sort((a,b) => a.length-b.length)
 }
 
 function buscoInterseccion(array1, array2) {
@@ -161,7 +171,37 @@ function buscoInterseccion(array1, array2) {
    // Si no tienen elementos en común, retornar un arreglo vacío.
    // [PISTA]: los arreglos no necesariamente tienen la misma longitud.
    // Tu código:
-}
+//    var array_resultado =[]; var a=0;concidencia= false;
+//    for (var i=0; i<array1.length; i++)
+//      {
+//       while ((a < array2.length) && (concidencia===false))
+//         {
+//          if(array2[a]=== array1[i])
+//             {coincidencia= true;}
+//          else {a=a+1};
+//         }
+//       if (coincidencia=== true)
+//       array_resultado.push(array1[i]);
+//      }
+//    return(array_resultado);
+// }                                                                 bucle infinito
+var array_resultado =[]; 
+    for (var i=0; i<array1.length; i++)
+      {
+       var concidencia= false;
+       for(var a=0; a < array2.length ; a++)
+         {
+          if(array2[a]=== array1[i])
+             {
+               concidencia= true;
+               break;
+             }
+         }
+       if (concidencia=== true)
+       array_resultado.push(array1[i]);
+      }
+    return(array_resultado);
+}   
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
