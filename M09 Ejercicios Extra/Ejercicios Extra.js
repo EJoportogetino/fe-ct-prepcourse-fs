@@ -6,6 +6,15 @@ function deObjetoAarray(objeto) {
    // Estos elementos debe ser cada par clave:valor del objeto recibido.
    // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
    // Tu código:
+   arr_1=[]; arr_2=[]
+   for(var prop in objeto)  // por cada elemento del objeto, tengo 
+   {
+      arr_1.push(prop);
+      arr_1.push(objeto[prop]);
+      arr_2.push(arr_1);
+      arr_1= [];
+   }
+   return(arr_2);
 }
 
 function numberOfCharacters(string) {
@@ -14,7 +23,43 @@ function numberOfCharacters(string) {
    // Las letras deben estar en orden alfabético.
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
    // Tu código:
-}
+   // var arreglo_string= string.split('');
+   // var contaron=true;
+   // var letras= {};
+   // for(var i=0; i< arreglo_string.length; i++)
+   //     {
+   //       var primer =arreglo_string[i];
+   //       if (contaron===false)
+   //         {
+   //          var cont=0;
+   //          for (var a=i; a< arreglo_string.length; a++)
+   //            {
+   //              if (primer=== arreglo_string[a])
+   //                {
+   //                  cont = cont+1;
+                   
+   //                }
+   //            }
+   //          letras[primer]=cont;// contaron= false; sumarle al objeto el count y el elemento 
+   //         } 
+   //     }
+   // return(letras);
+      var letras = {};
+   
+      for (var i = 0; i < string.length; i++) {
+         var letra = string[i].toLowerCase(); // Convertir la letra a minúscula
+   
+         if (letra.match(/[a-z]/)) { // Verificar si es una letra
+            if (letras[letra]) {
+               letras[letra]++;
+            } else {
+               letras[letra] = 1;
+            }
+         }
+      }
+   
+      return letras;
+   }
 
 function capToFront(string) {
    // Recibes un string con algunas letras en mayúscula y otras en minúscula.
@@ -22,6 +67,35 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+   // var pal= string.split(''); var pal_arreglada= [];var cont=0
+   // for(var a=0; a<pal.length; a++)
+   //   {
+   //    if (pal[a]>='a' && pal[a]<='z')
+   //      {
+   //       pal_arreglada.push(pal[a]); cont=cont +1;
+   //      }
+   //    else
+   //    if (pal[a]>='A' && pal[a]<='Z')
+   //      {
+   //       pal_arreglada[cont]=pal[a]; cont =cont+1;
+   //      }
+   //   }
+   //   return(pal_arreglada.join(''));                           no lo pude desbugear, otro planteo, se arman dos arreglos y al final se unen
+   var arr_min= [];var arr_may= []; pal= string.split('');
+   for(var a=0; a<pal.length; a++)
+     {
+       if (pal[a]>='a' && pal[a]<='z')
+         {
+          arr_min.push(pal[a]);
+         }
+       else
+       if (pal[a]>='A' && pal[a]<='Z')
+         {
+          arr_may.push(pal[a]);
+         }
+      }
+      var palabra_arreglada= (arr_may.join('')+arr_min.join('')) ;
+   return (palabra_arreglada)
 }
 
 function asAmirror(frase) {
@@ -35,12 +109,41 @@ function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   // var ultimo= numero % 10;
+   // while (numero >10)
+   //  {
+   //    numero= numero %10;
+   //  }
+   //  if (numero=ultimo)
+   //    {return('Es capicua')}
+   // else
+   //    {return("No es capicua")}    aunque el primero y el ultimo sean iguales no significa q sea capicua, aparte mal hecho
+   
+   var numero_copia= numero;numero_dadovuelta=0;
+   while(numero > 0)
+     {
+       var i = numero % 10;
+       numero = Math.floor(numero /10);
+       var numero_dadovuelta= (numero_dadovuelta*10) + i; 
+     }
+   if (numero_copia=== numero_dadovuelta) 
+     {return("Es capicua")}
+   else{return("No es capicua")}
 }
 
 function deleteAbc(string) {
    // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.
    // Retorna el string sin estas letras.
    // Tu código:
+   var arreglo_=string.split(''); var arreglado=[];
+  for (var i=0; i< arreglo_.length; i++)
+   {
+   if (!(arreglo_[i]=== 'a' ||arreglo_[i]===  'b' ||arreglo_[i]===  'c'))
+    {
+      arreglado.push(arreglo_[i]);
+    }
+   }
+ return(arreglado.join(''));
 }
 
 function sortArray(arrayOfStrings) {
