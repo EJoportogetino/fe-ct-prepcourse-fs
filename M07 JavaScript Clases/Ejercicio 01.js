@@ -51,8 +51,6 @@ function agregarMetodoPrototype(Usuario) {
     {
       return("Hello World!");
     }
-   
-
 
 }
 
