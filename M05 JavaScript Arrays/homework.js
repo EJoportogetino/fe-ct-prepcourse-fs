@@ -15,15 +15,18 @@ function devolverUltimoElemento(array) {
 function obtenerLargoDelArray(array) {
    // Retornar la longitud del arreglo recibido por parámetro.
    // Tu código:
-   return(array.length); // logre optimizar un poco estos primeros ejercicios (chekear anteriores logs), luego de entender el manejo de los arrays
+   return(array.length); 
 }
 
 function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
-   var masuno=array.map(num =>{return num+1});
-   return(masuno);                                                                    //probar hacer por interación
+   //var masuno=array.map(num =>{return num+1});
+   //return(masuno);                                                                    //probar hacer por interación
+   for (i=0;i<array.length;i++)
+     {array[i]=array[i] +1}
+    return(array)
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {

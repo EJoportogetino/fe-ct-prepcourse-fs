@@ -44,23 +44,31 @@ function numberOfCharacters(string) {
    //         } 
    //     }
    // return(letras);
-      var letras = {};
-      for (var i = 0; i < string.length; i++) 
-      {
-         var letra = string[i].toLowerCase(); 
-         if (letra.match(/[a-z]/)) 
-         { 
-            if (letras[letra]) 
-            {
-               letras[letra]++;
-            } else 
-            {
-               letras[letra] = 1;
-            }
-         }
-      }
+      // var letras = {};
+      // for (var i = 0; i < string.length; i++) 
+      // {
+      //    var letra = string[i].toLowerCase(); 
+      //    if (letra.match(/[a-z]/)) 
+      //    { 
+      //       if (letras[letra]) 
+      //       {
+      //          letras[letra]++;
+      //       } else 
+      //       {
+      //          letras[letra] = 1;
+      //       }
+      //    }
+      // }
    
-      return letras;
+      // return letras;
+      let letras= {};
+      for (var i = 0; i < string.length; i++)
+       {
+         
+       }
+
+
+        
    }
 
 function capToFront(string) {
